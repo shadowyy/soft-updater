@@ -1,0 +1,198 @@
+{
+  "mirrors": [
+    "https://gh.h233.eu.org/https://github.com",
+    "https://gh.ddlc.top/https://github.com",
+    "https://gh-proxy.org/https://github.com",
+    "https://cdn.gh-proxy.org/https://github.com",
+    "https://edgeone.gh-proxy.org/https://github.com",
+    "https://cors.isteed.cc/github.com",
+    "https://ghproxy.it/https://github.com",
+    "https://github.boki.moe/https://github.com",
+    "https://gh.jasonzeng.dev/https://github.com",
+    "https://gh.monlor.com/https://github.com",
+    "https://github.geekery.cn/https://github.com",
+    "https://github.ednovas.xyz/https://github.com",
+    "https://ghfile.geekertao.top/https://github.com",
+    "https://ghp.keleyaa.com/https://github.com",
+    "https://gh.chjina.com/https://github.com",
+    "https://ghpxy.hwinzniej.top/https://github.com",
+    "https://cdn.crashmc.com/https://github.com",
+    "https://git.yylx.win/https://github.com",
+    "https://gitproxy.mrhjx.cn/https://github.com",
+    "https://ghproxy.cxkpro.top/https://github.com",
+    "https://gh.xxooo.cf/https://github.com",
+    "https://gh.idayer.com/https://github.com",
+    "https://down.npee.cn/?",
+    "https://raw.ihtw.moe/github.com",
+    "https://xget.xi-xu.me/gh",
+    "https://gh.zwy.one/https://github.com",
+    "https://ghproxy.monkeyray.net/https://github.com",
+    "https://ghproxy.net/https://github.com",
+    "https://ghfast.top/https://github.com",
+    "https://wget.la/https://github.com"
+  ],
+  "urlStyleMirrors": [
+    "https://down.npee.cn/?"
+  ],
+  "apps": [
+    {
+      "id": "omp",
+      "repo": "can1357/oh-my-pi",
+      "asset": "omp-windows-x64.exe",
+      "mode": "file",
+      "installDir": "C:\\soft\\omp",
+      "target": "omp.exe",
+      "version": {
+        "exe": "omp.exe",
+        "args": ["--version"],
+        "regex": "omp/(\\d+(?:\\.\\d+)*)"
+      },
+      "note": "Restart omp after an update; the running exe keeps the old image."
+    },
+    {
+      "id": "chsrc",
+      "repo": "RubyMetric/chsrc",
+      "asset": "chsrc-x64-windows.exe",
+      "mode": "file",
+      "installDir": "C:\\soft\\chsrc",
+      "target": "chsrc.exe",
+      "version": {
+        "exe": "chsrc.exe",
+        "args": ["--version"],
+        "regex": "v(\\d+(?:\\.\\d+)*)"
+      }
+    },
+    {
+      "id": "pixi",
+      "repo": "prefix-dev/pixi",
+      "asset": "pixi-x86_64-pc-windows-msvc.exe",
+      "mode": "file",
+      "installDir": "C:\\soft\\pixi",
+      "target": "pixi.exe",
+      "version": {
+        "exe": "pixi.exe",
+        "args": ["--version"],
+        "regex": "pixi\\s+(\\d+(?:\\.\\d+)*)"
+      }
+    },
+    {
+      "id": "bun",
+      "repo": "oven-sh/bun",
+      "asset": "bun-windows-x64.zip",
+      "mode": "zip",
+      "stripTopLevel": true,
+      "installDir": "C:\\soft\\bun",
+      "version": {
+        "exe": "bun.exe",
+        "args": ["--version"],
+        "regex": "(\\d+(?:\\.\\d+)*)"
+      }
+    },
+    {
+      "id": "pandoc",
+      "repo": "jgm/pandoc",
+      "assetPattern": "^pandoc-[0-9.]+-windows-x86_64\\.zip$",
+      "mode": "zip",
+      "stripTopLevel": true,
+      "installDir": "C:\\soft\\pandoc",
+      "version": {
+        "exe": "pandoc.exe",
+        "args": ["--version"],
+        "regex": "pandoc\\s+(\\d+(?:\\.\\d+)*)"
+      }
+    },
+    {
+      "id": "noctty",
+      "repo": "amanthanvi/noctty",
+      "assetPattern": "^noctty-[0-9.]+-windows-x64-portable\\.zip$",
+      "mode": "zip",
+      "stripTopLevel": true,
+      "installDir": "C:\\soft\\noctty",
+      "version": {
+        "exe": "noctty.exe",
+        "args": ["--version"],
+        "regex": "noctty\\s+(\\d+(?:\\.\\d+)*)"
+      },
+      "note": "GUI-subsystem exe: the version probe runs through redirected handles. Restart the terminal after an update."
+    },
+    {
+      "id": "netcatty",
+      "repo": "binaricat/Netcatty",
+      "assetPattern": "^Netcatty-[0-9.]+-portable-win-x64\\.exe$",
+      "mode": "file",
+      "installDir": "C:\\soft\\netcatty",
+      "target": "Netcatty.exe",
+      "version": { "file": "Netcatty.exe" },
+      "requireNotRunning": ["Netcatty"],
+      "note": "Portable single-file build; the GUI prints nothing, so the version comes from the exe metadata. The launcher holds its own exe without FILE_SHARE_DELETE (the app then runs from a self-extracted copy in %TEMP%), so the file cannot even be renamed while it runs: the update is skipped until Netcatty is closed. CloseMainWindow is useless here (no main window), so nothing is killed."
+    },
+    {
+      "id": "pi-bolt",
+      "repo": "opensec-git/Pi-Bolt",
+      "asset": "pi-bolt-win32-x64.zip",
+      "mode": "zip",
+      "stripTopLevel": true,
+      "installDir": "C:\\soft\\pi-bolt",
+      "version": {
+        "exe": "pi-bolt.exe",
+        "args": ["--version"],
+        "regex": "Pi-Bolt\\s+v?(\\d+(?:\\.\\d+)*)"
+      },
+      "note": "JIT-off build, matching the installed one. The probe reads the Pi-Bolt version, not the Pi version it embeds."
+    },
+    {
+      "id": "git",
+      "repo": "git-for-windows/git",
+      "assetPattern": "^PortableGit-[0-9.]+-64-bit\\.7z\\.exe$",
+      "mode": "sfx",
+      "installDir": "C:\\soft\\git",
+      "sfxArgs": ["-y", "-o{installDir}"],
+      "requireNotRunning": ["git", "git-bash", "git-cmd", "bash", "sh"],
+      "tagRegex": "v(\\d+\\.\\d+\\.\\d+)\\.windows\\.(\\d+)",
+      "version": {
+        "exe": "cmd\\git.exe",
+        "args": ["--version"],
+        "regex": "(\\d+\\.\\d+\\.\\d+)(?:\\.windows\\.(\\d+))?"
+      },
+      "note": "PortableGit tree updated by its own 7z self-extractor: no per-file backup, so nothing may be using git while it runs. etc/ config edits get overwritten by the archive."
+    },
+    {
+      "id": "Notepad3",
+      "repo": "rizonesoft/Notepad3",
+      "assetPattern": "_x64_Portable\\.zip$",
+      "mode": "zip",
+      "exclude": ["Notepad3.ini", "minipath.ini", "Favorites/*", "grepWin/*"],
+      "installDir": "C:\\soft\\Notepad3",
+      "version": {
+        "file": "Notepad3.exe"
+      },
+      "note": "User settings (Notepad3.ini, minipath.ini) and Favorites/grepWin are preserved."
+    },
+    {
+      "id": "geolibre",
+      "repo": "opengeos/GeoLibre",
+      "assetPattern": "^geolibre-desktop-[0-9.]+-x64-portable\\.zip$",
+      "mode": "zip",
+      "stripTopLevel": true,
+      "installDir": "C:\\soft\\geolibre",
+      "version": {
+        "file": "geolibre-desktop.exe"
+      },
+      "requireNotRunning": ["geolibre-desktop"],
+      "note": "Tauri portable build: the zip wraps a geolibre-desktop-<ver>-x64/ folder (geolibre-desktop.exe, WebView2Loader DLLs, backend\\geolibre_server sidecar, README.txt, portable.marker), so stripTopLevel drops that wrapper. The shipped exe is geolibre-desktop.exe; the install had been renamed to geolibre.exe, so it was renamed back to match the release (update your shortcut/launcher to geolibre-desktop.exe). The exe is a GUI binary that prints nothing, so the version comes from its metadata. A running Tauri exe maps its own image, so the file cannot be renamed while it runs: the update is skipped until GeoLibre is closed. The zip only writes app files; a Python venv you set up under backend\\ is never deleted."
+    },
+    {
+      "id": "GrClean",
+      "repo": "graent/grclean",
+      "assetPattern": "^GrClean-[0-9.]+-portable\\.exe$",
+      "mode": "file",
+      "installDir": "C:\\soft\\GrClean",
+      "target": "GrClean-2.2.31-portable.exe",
+      "version": {
+        "file": "GrClean-2.2.31-portable.exe"
+      },
+      "requireNotRunning": ["GrClean-2.2.31-portable"],
+      "note": "Single-file portable launcher: it self-extracts to %TEMP% and runs from there, but the launcher process (named after the exe, GrClean-2.2.31-portable) keeps its own exe open without FILE_SHARE_DELETE, so the file cannot even be renamed while it runs: the update is skipped until GrClean is closed. The release asset name carries the version, but 'target' is a fixed name, so every update is written under GrClean-2.2.31-portable.exe regardless of version; the version is read from the exe metadata, so the filename is only cosmetic. The launcher name is derived from that fixed filename, so requireNotRunning stays valid across updates."
+    }
+  ]
+}
