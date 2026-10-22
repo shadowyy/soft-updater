@@ -193,6 +193,20 @@
       },
       "requireNotRunning": ["GrClean-2.2.31-portable"],
       "note": "Single-file portable launcher: it self-extracts to %TEMP% and runs from there, but the launcher process (named after the exe, GrClean-2.2.31-portable) keeps its own exe open without FILE_SHARE_DELETE, so the file cannot even be renamed while it runs: the update is skipped until GrClean is closed. The release asset name carries the version, but 'target' is a fixed name, so every update is written under GrClean-2.2.31-portable.exe regardless of version; the version is read from the exe metadata, so the filename is only cosmetic. The launcher name is derived from that fixed filename, so requireNotRunning stays valid across updates."
+    },
+    {
+      "id": "pwsh",
+      "repo": "PowerShell/PowerShell",
+      "assetPattern": "^PowerShell-[0-9.]+-win-x64\\.zip$",
+      "mode": "zip",
+      "installDir": "C:\\soft\\pwsh",
+      "requireNotRunning": ["pwsh"],
+      "version": {
+        "exe": "pwsh.exe",
+        "args": ["--version"],
+        "regex": "PowerShell\\s+(\\d+(?:\\.\\d+)*)"
+      },
+      "note": "The release zip has no wrapper folder: pwsh.exe, the .NET DLLs, Modules\\, ref\\ and en-US\\ sit at the archive root, so no stripTopLevel. The tree is ~106 MB / 661 entries: a live pwsh session maps pwsh.exe plus the managed and native DLLs it has loaded, and those cannot be renamed, so the update is skipped until every pwsh running out of C:\\soft\\pwsh is closed (the updater itself runs on Windows PowerShell 5.1, so the 02:00 task is unaffected). powershell.config.json ships unchanged (ExecutionPolicy RemoteSigned), so it needs no exclude; Modules\\ you installed yourself and the preview\\ helper are never deleted: zip mode only writes archive entries."
     }
   ]
 }

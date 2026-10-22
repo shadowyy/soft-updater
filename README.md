@@ -151,6 +151,9 @@ Set-ScheduledTask -InputObject $t
 | pi-bolt | opensec-git/Pi-Bolt | zip | `C:\soft\pi-bolt` |
 | git | git-for-windows/git | sfx | `C:\soft\git` |
 | Notepad3 | rizonesoft/Notepad3 | zip | `C:\soft\Notepad3` |
+| geolibre | opengeos/GeoLibre | zip | `C:\soft\geolibre` |
+| GrClean | graent/grclean | file | `C:\soft\GrClean` |
+| pwsh | PowerShell/PowerShell | zip | `C:\soft\pwsh` |
 | self | （本地脚本与文档） | snapshot | `backup\self` |
 
 telepresence 已移出清单（`C:\soft\telepresence` 本体保留，不再自动更新）。
